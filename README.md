@@ -1,7 +1,8 @@
-# ARM Assembly training
+# Assembly programming
 Some ARM code written in 2019 and 2022, to be played inside the [DE1-SoC emulator](https://cpulator.01xz.net/?sys=arm-de1soc).
 
 ## Files
+* `quicksort.s` was school work requiring to translate quicksort from C code to ASM by hand.
 * `calculator.s` is a simple calculator supporting addition, subtraction and multiplication, use the mapped 7-segment display of the emulator.
 * `vga.s` is a recent idea I had to train myself but not finished. I also spent some times around the storebytes function, even if it's not very useful in this case.
 
