@@ -6,8 +6,8 @@ Some ARM code written in 2019 and 2022, to be played inside the [DE1-SoC emulato
 * `calculator.s` is a simple calculator supporting addition, subtraction and multiplication, use the mapped 7-segment display of the emulator.
 * `vga.s` is a recent idea I had to train myself but not finished. I also spent some times around the storebytes function, even if it's not very useful in this case.
 
-### Pseudo-code for `storebyte` routine
-I initially wrote this function directly in assembly, to write 1 to 4 bytes at arbitrary location (some ARM configurations require aligned access). I thought it would be simple but due to odds and quirks of my simple implementation, I rewrote it in pseudo-code (here in C representation) and translated it in assembly manually to keep my mind fresh.
+### Pseudo-code for `storebytes` routine
+I initially wrote this function directly in assembly, to write 1 to 4 bytes at arbitrary location (some ARM configurations require aligned access). I thought it would be simple but due to odds and quirks of my simple implementation, I rewrote it in pseudo-code first (here in C representation) then translated it in assembly by hand following the pseudo-code to keep my mind fresh.
 
 ```C
 void storebytes(uint32_t desired_addr, uint32_t data, uint32_t size)
