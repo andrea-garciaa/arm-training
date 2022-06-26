@@ -27,7 +27,8 @@ void storebytes(uint32_t desired_addr, uint32_t data, uint32_t size)
         *(uint32_t*)addr = old | (data >> (size*8));                    // shift right by size of remaining data to only keep data fitting in the first word
         
         // remaining data
-        old = *(uint32_t*)(addr + 4)                                    // switch to next word
+        addr += 4;                                                      // switch to next word
+        old = *(uint32_t*)addr;
         old &= (-1 >> (size*8));                                        // clear all bits of [size] bytes in old (-1 is 0xffffffff, then we shift right to get zeros on the left part that will receive new value)
         *(uint32_t*)addr = old | (data << (4 - (size*8)));              // shift left data from 4-size to keep only the remaining data
     }
